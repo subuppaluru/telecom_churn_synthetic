@@ -1,0 +1,60 @@
+Telecom Customer Churn Prediction
+Project Overview
+This project aims to build a predictive model to identify customers who are likely to churn from a telecom company. By predicting churn, the company can proactively engage with high-risk customers to improve retention and reduce revenue loss. The project involves exploring the dataset, preprocessing the data, building and evaluating different machine learning models, addressing class imbalance, and providing business recommendations based on the findings.
+
+Dataset
+The dataset used in this project is telecom_churn_synthetic.csv, which contains information about telecom customers, including their demographics, services subscribed, contract details, charges, and churn status.
+
+Methodology
+The project follows a typical machine learning workflow:
+
+Data Loading and Description: Loading the dataset and understanding its structure, data types, and summary statistics.
+Exploratory Data Analysis (EDA): Visualizing the distribution of key features and exploring the relationships between features and the target variable (Churn).
+Univariate analysis of numerical and categorical features.
+Bivariate analysis to understand the relationship between features and churn.
+Correlation analysis of numerical features.
+Feature Engineering & Preprocessing: Preparing the data for machine learning models.
+Handling categorical variables using one-hot encoding and label encoding.
+Scaling numerical features using StandardScaler.
+Creating new interaction features based on EDA findings.
+Model Building: Training and evaluating different classification models for churn prediction.
+Logistic Regression
+Random Forest Classifier
+XGBoost Classifier
+Class Imbalance Handling: Addressing the imbalance in the target variable (Churn) using techniques like scale_pos_weight (for XGBoost) and SMOTE (Synthetic Minority Over-sampling Technique).
+Cross-validation & Hyperparameter Tuning: Optimizing the model performance using GridSearchCV with StratifiedKFold cross-validation, focusing on metrics relevant to imbalanced datasets (e.g., recall).
+Feature Importance and Interpretation: Identifying the most important features that contribute to churn prediction from the best-performing model.
+Conclusion and Recommendations: Summarizing the project findings, model performance, and providing actionable business recommendations to reduce churn.
+Key Findings
+The dataset is imbalanced, with a higher number of non-churned customers.
+Key drivers of churn include:
+Month-to-month contracts and lower tenure.
+Higher monthly charges.
+Fiber optic internet service.
+Electronic check payment method.
+The interaction between tenure and contract type.
+Model Performance
+Several models were evaluated, with a focus on metrics like precision, recall, and F1-score due to the class imbalance. Models with class imbalance handling techniques (SMOTE, scale_pos_weight) generally showed improved recall for the churn class compared to baseline models, at the cost of some precision. The tuned Random Forest model with SMOTE demonstrated a good balance, achieving a recall of 0.51 on the test set.
+
+Recommendations
+Based on the analysis, the following recommendations are made to reduce customer churn:
+
+Implement targeted retention programs for new customers and those on month-to-month contracts.
+Offer incentives to encourage customers to switch to longer-term contracts.
+Review pricing and service offerings, especially for high-charge and Fiber optic plans.
+Investigate and address potential issues with the electronic check payment method.
+Promote value-added services like online security and streaming.
+Utilize the developed churn prediction model to identify and proactively engage with high-risk customers.
+Continuously monitor model performance and refine retention strategies.
+How to Run the Project
+Clone the repository: git clone <repository_url>
+Navigate to the project directory: cd telecom-churn-prediction
+Install the required libraries: pip install -r requirements.txt (Create a requirements.txt file with the necessary libraries: pandas, numpy, matplotlib, seaborn, scikit-learn, xgboost, imbalanced-learn)
+Run the Jupyter Notebook or Python script containing the code.
+Files in the Repository
+telecom_churn_synthetic.csv: The dataset.
+your_notebook_name.ipynb: The Jupyter Notebook containing the analysis and code.
+README.md: This file.
+requirements.txt: List of required Python packages.
+License
+Specify your project's license here (e.g., MIT, Apache 2.0).
