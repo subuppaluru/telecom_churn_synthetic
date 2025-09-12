@@ -55,6 +55,6 @@ Files in the Repository
 telecom_churn_synthetic.csv: The dataset.
 your_notebook_name.ipynb: The Jupyter Notebook containing the analysis and code.
 README.md: This file.
-requirements.txt: List of required Python packages.
+
 License
 Specify your project's license here (e.g., MIT, Apache 2.0).
